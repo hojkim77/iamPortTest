@@ -41,6 +41,7 @@ function Home({ navigation }: Props) {
         alignSelf={'center'}
       >
         <Button.Group bottom={'50%'} width={'100%'} alignSelf={'center'}>
+          {/*
           <Button
             m={'4%'}
             bgColor={'#fff'}
@@ -48,6 +49,41 @@ function Home({ navigation }: Props) {
             flex={1}
             shadow={1}
             onPress={() => navigation.push('PaymentTest')}
+          >
+          </Button>
+          */}
+
+          <Button
+            m={'4%'}
+            bgColor={'#fff'}
+            borderRadius={3}
+            flex={1}
+            shadow={1}
+            onPress={() =>
+              navigation.push('Payment', {
+                tierCode: undefined,
+                params: {
+                  amount: 50,
+                  buyer_email: 'ghwnd@naver.com',
+                  buyer_name: 'ghwndrla',
+                  buyer_tel: '010-1234-1234',
+                  escrow: false,
+                  merchant_uid: '57008833-33004',
+                  name: 'ghwndrla',
+                  pay_method: 'card',
+                  /**
+                   * html5_inicis = 신용카드
+                   * naverpay = 네이버페이
+                   * kakaopay = 카카오페이
+                   * tosspay = 토스페이
+                   */
+                  pg: 'naverpay', //
+                  app_scheme: 'what?',
+                  popup: false,
+                  naverPopupMode: false,
+                },
+              })
+            }
           >
             <Stack direction={'column'} alignItems={'center'}>
               <FontAwesome name={'credit-card'} size={30} />
